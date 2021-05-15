@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<VBox alignment="TOP_CENTER"
+      maxHeight="Infinity" maxWidth="Infinity"
+      minHeight="-Infinity" minWidth="-Infinity"
+      prefWidth="400" prefHeight="250"
+      xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <Label prefHeight="70" text="Please Select Your Bounce Parameters" textAlignment="CENTER" wrapText="true">
+    <VBox.margin>
+        <Insets top="20.0" />
+    </VBox.margin>
+    <font>
+        <Font size="24.0" />
+    </font>
+</Label>
+    <GridPane style="-fx-hgap: 15;" prefHeight="100">
+        <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+        <fx:define>
+        <ToggleGroup fx:id="radioButtons"/>
+        </fx:define>
+        <children>
+            <RadioButton fx:id="pagesRadioButton" onAction="#pagesClick" toggleGroup="$radioButtons" GridPane.rowIndex="1"/>
+            <Label disable="true" fx:id="pagesLabel" text="Pages Viewed:" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <font>
+                    <Font size="20.0"/>
+                </font>
+            </Label>
+            <TextField disable="true" fx:id="pagesTextField"  GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <RadioButton fx:id="exitRadioButton" onAction="#exitClick" toggleGroup="$radioButtons" GridPane.rowIndex="2"/>
+        </children>
+            <Label disable="true" fx:id="exitLabel" text="Exit Time (s):" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <font>
+                    <Font size="20.0"/>
+                </font>
+            </Label>
+        <TextField disable="true" fx:id="exitTextField" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+    </GridPane>
+    <Region prefHeight="19"/>
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints />
+        </rowConstraints>
+        <Button fx:id="confirmButton" disable="${pagesTextField.text.empty}" maxWidth="Infinity" onAction="#confirm" text="Confirm selection" GridPane.columnIndex="0" />
+        <Button fx:id="confirmButton2" disable="${exitTextField.text.empty}" maxWidth="Infinity" onAction="#confirm" text="Confirm selection" GridPane.columnIndex="0" />
+        <Button fx:id="closeButton" maxWidth="Infinity" onAction="#cancel" text="Close" GridPane.columnIndex="1" />
+    </GridPane>
+    <stylesheets>
+        <URL value="@../../css/main.css" />
+    </stylesheets>
+</VBox>

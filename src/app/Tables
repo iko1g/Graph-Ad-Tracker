@@ -1,0 +1,52 @@
+Impressions Table:
+
+Name:           Type in Java:       Type in SQL:
+Date            String              Date
+ID              String              BigInt
+Gender          Boolean             TinyText
+Age             String              TinyText
+Income          String              TinyText
+Context         String              TinyText
+ImpressionCost  Float               Float
+
+Clicks Table:
+
+Name            Type in Java:       Type in SQL:
+Date            String              Date
+ID              String              BigInt
+Click Cost      Float               Float
+
+Server Table
+
+Name:           Type in Java:       Type in SQL:
+Entry Date      String              Date
+ID              String              BigInt
+Exit Date       String              Date
+Pages Viewed    Int                 SmallInt (Possibly TinyInt)
+Conversion      Boolean             Bool
+
+
+
+How we plan to implement:
+1. We have 3 functions for each CSV file.
+2. When the user Selects a CSV file, we need to error check if tables have same number of collumns as expected.
+3. If we're reading the file and we throw and exception other than empty file, we need to throw error.
+4. Assuming no error, we take the first line and either discard it, or put it as our SQL titles.
+5. We go through the file line by line and we convert the values in their correct Java types.
+6. Either insert into SQLite one by one, or all at the same time.
+
+7. Erase database before you insert.
+
+8. Improve performance:
+https://northconcepts.com/blog/2016/05/17/how-to-speed-up-jdbc-inserts/
+a: Use batch inserts
+b: Multi-threading/Multiple connectors
+
+
+
+Plan for tomorrow:
+
+Clean up the code we have so far.
+See how we should input into SQLite.
+Create the DB connection.
+Parse ito Java files. 

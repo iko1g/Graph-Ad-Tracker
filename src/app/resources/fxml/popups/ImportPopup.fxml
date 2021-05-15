@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="400" prefWidth="400" spacing="5" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <Text styleClass="h1" text="Insert the following" />
+    <Text styleClass="h1" text="CSV files" />
+    <Region prefHeight="100" />
+    <Button fx:id="impressionButton" onAction="#impressionsInsertion" prefHeight="80" prefWidth="320" text="Impression Log:" />
+    <Region prefHeight="20" />
+    <Button fx:id="clicksButton" onAction="#clicksInsertion" prefHeight="80" prefWidth="320" text="Click Log:" />
+    <Region prefHeight="20" />
+    <Button fx:id="serversButton" onAction="#serversInsertion" prefHeight="80" prefWidth="320" text="Server Log:" />
+    <Region prefHeight="25" />
+   <ProgressBar prefHeight="50.0" prefWidth="256.0" progress="0.0" fx:id="progressBar" />
+    <Region prefHeight="25" />
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints />
+        </rowConstraints>
+        <Button fx:id="confirmButton" disable="true" maxWidth="Infinity" onAction="#confirm" text="Confirm selection" GridPane.columnIndex="0" />
+        <Button fx:id="closeButton" maxWidth="Infinity" onAction="#close" text="Close" GridPane.columnIndex="1" />
+    </GridPane>
+    <stylesheets>
+        <URL value="@../../css/main.css" />
+    </stylesheets>
+</VBox>

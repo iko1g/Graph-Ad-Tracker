@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<HBox prefHeight="70" style="-fx-background-color: transparent" xmlns="http://javafx.com/javafx/15.0.1"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="app.java.controllers.DatasetController">
+    <ImageView fitHeight="40" fitWidth="40" onMouseClicked="#enterSettingsPopup">
+        <Image url="@../images/cogs.png" />
+    </ImageView>
+    <Region HBox.hgrow="ALWAYS" />
+    <Button onMouseClicked="#showAddDataPopup" prefWidth="150" styleClass="button" text="New Data Set" />
+</HBox>

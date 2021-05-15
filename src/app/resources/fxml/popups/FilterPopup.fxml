@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+<VBox alignment="TOP_CENTER"
+      maxHeight="Infinity" maxWidth="Infinity"
+      minHeight="-Infinity" minWidth="-Infinity"
+      prefWidth="440" prefHeight="520"
+      xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1"
+>
+    <Label fx:id="filterPopupLabel" text="Select Filters" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+        <VBox.margin>
+          <Insets top="20.0" />
+        </VBox.margin>
+        <font>
+          <Font size="24.0" />
+        </font>
+    </Label>
+    <MenuButton fx:id="ageFilterButton" mnemonicParsing="false" prefWidth="200" styleClass="button" text="Age">
+      <items>
+          <MenuItem mnemonicParsing="false" onAction="#young" text="&lt;25" />
+          <MenuItem mnemonicParsing="false" onAction="#between_25_34" text="25-34" />
+          <MenuItem mnemonicParsing="false" onAction="#between_35_44" text="35-44" />
+          <MenuItem mnemonicParsing="false" onAction="#between_45_54" text="45-54" />
+          <MenuItem mnemonicParsing="false" onAction="#old" text="&gt;54" />
+      </items>
+        <VBox.margin>
+          <Insets top="20.0" />
+        </VBox.margin>
+    </MenuButton>
+    <MenuButton fx:id="genderFilterButton" mnemonicParsing="false" prefWidth="200" styleClass="button" text="Gender">
+      <items>
+          <MenuItem mnemonicParsing="false" onAction="#genderFilter" text="Male" />
+          <MenuItem mnemonicParsing="false" onAction="#genderFilter" text="Female" />
+      </items>
+        <VBox.margin>
+          <Insets top="20.0" />
+        </VBox.margin>
+    </MenuButton>
+    <MenuButton fx:id="incomeFilterButton" mnemonicParsing="false" prefWidth="200" styleClass="button" text="Income">
+      <items>
+          <MenuItem mnemonicParsing="false" onAction="#incomeFilter" text="Low" />
+          <MenuItem mnemonicParsing="false" onAction="#incomeFilter" text="Medium" />
+          <MenuItem mnemonicParsing="false" onAction="#incomeFilter" text="High" />
+      </items>
+        <VBox.margin>
+          <Insets top="20.0" />
+        </VBox.margin>
+    </MenuButton>
+    <MenuButton fx:id="contextFilterButton" mnemonicParsing="false" prefWidth="200" styleClass="button" text="Context">
+      <items>
+          <MenuItem mnemonicParsing="false" onAction="#contextFilter" text="News"/>
+          <MenuItem mnemonicParsing="false" onAction="#contextFilter" text="Shopping" />
+          <MenuItem mnemonicParsing="false" onAction="#contextFilter" text="Social Media" />
+          <MenuItem mnemonicParsing="false" onAction="#contextFilter" text="Blog" />
+          <MenuItem mnemonicParsing="false" onAction="#contextFilter" text="Hobbies" />
+      </items>
+        <VBox.margin>
+          <Insets top="20.0" />
+        </VBox.margin>
+    </MenuButton>
+<!--    <DatePicker fx:id="DatePicker" />-->
+    <Region prefHeight="50" />
+    <Label text="Date Range for Line" style="-fx-font-size: 18" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+        <VBox.margin>
+            <Insets top="20.0" />
+        </VBox.margin>
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Label>
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+        <DatePicker fx:id="fromDateInFilter"/>
+        <Label text="   To   "  style="-fx-font-size: 14"/>
+        <DatePicker fx:id="toDateInFilter"/>
+    </HBox>
+
+    <Region prefHeight="100" />
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="50"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints/>
+        </rowConstraints>
+        <Button fx:id="confirmButton" maxWidth="Infinity" text="Confirm selection" GridPane.columnIndex="0"
+                onAction="#confirm"/>
+        <Button fx:id="closeButton" maxWidth="Infinity" text="Close" GridPane.columnIndex="1" onAction="#cancel"/>
+    </GridPane>
+    <stylesheets>
+        <URL value="@../../css/main.css" />
+    </stylesheets>
+</VBox>

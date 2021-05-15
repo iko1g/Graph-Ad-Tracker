@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<VBox minWidth="200" prefWidth="400" style="-fx-padding: 20 20;"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="app.java.controllers.MetricController">
+    <HBox prefHeight="70" style="-fx-background-color: transparent">
+        <Button onMouseClicked="#showAddDataPopup" prefWidth="150" styleClass="button" text="New Data Set" />
+    </HBox>
+    <VBox VBox.vgrow="ALWAYS" spacing="10">
+        <VBox styleClass="metric_menu" VBox.vgrow="ALWAYS">
+            <Text styleClass="metric_menu_title">Select metric</Text>
+            <GridPane styleClass="metric_menu_options">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                </columnConstraints>
+                <Button fx:id="impressionsButton" onAction="#metricButtonClick" maxWidth="Infinity" styleClass="button" text="Impressions" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Button fx:id="clicksMetricButton" onAction="#metricButtonClick" maxWidth="Infinity" styleClass="button" text="Clicks" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Button fx:id="uniquesButton" onAction="#metricButtonClick" maxWidth="Infinity" styleClass="button" text="Uniques" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Button fx:id="bouncesButton" disable="true" onAction="#metricButtonClick" maxWidth="Infinity" styleClass="button" text="Bounces" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Button fx:id="conversionsButton" onAction="#metricButtonClick" maxWidth="Infinity" styleClass="button" text="Conversions" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Button fx:id="totalCostButton" onAction="#metricButtonClick" maxWidth="Infinity" styleClass="button" text="Total Cost" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Button fx:id="CPAButton" onAction="#metricButtonClick" maxWidth="Infinity" styleClass="button" text="CPA" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <Button fx:id="CTRButton" onAction="#metricButtonClick" maxWidth="Infinity" styleClass="button" text="CTR" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Button fx:id="CPMButton" onAction="#metricButtonClick" maxWidth="Infinity" styleClass="button" text="CPM" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <Button fx:id="CPCButton" onAction="#metricButtonClick" maxWidth="Infinity" styleClass="button" text="CPC" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Button fx:id="bounceRateButton" disable="true" onAction="#metricButtonClick" maxWidth="Infinity" styleClass="button" text="Bounce Rate" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            </GridPane>
+        </VBox>
+        <HBox maxWidth="Infinity" spacing="15">
+<!--            <ChoiceBox fx:id="defineBounce" minWidth="320" maxWidth="Infinity" styleClass="button" onAction="#selectBounce" value="Bounce Rate: One Page Viewed">-->
+<!--                <String fx:value="One Page Viewed" />-->
+<!--                <String fx:value="Quick Exit" />-->
+<!--            </ChoiceBox>-->
+            <Button fx:id="defineBounceButton" minHeight="40" minWidth="360" maxWidth="Infinity" styleClass="button" text="Bounce has not been defined." onAction="#openDefineBounce"/>
+        </HBox>
+    </VBox>
+
+</VBox>

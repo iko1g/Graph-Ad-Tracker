@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER"
+      maxHeight="Infinity" maxWidth="Infinity"
+      minHeight="-Infinity" minWidth="-Infinity"
+      prefWidth="400" prefHeight="400"
+      xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="app.java.controllers.popups.CompareChartsPopupController">
+    <Label text="Select Filters" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+        <VBox.margin>
+            <Insets top="20.0" />
+        </VBox.margin>
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Label>
+    <MenuButton fx:id="ageFilterButton" mnemonicParsing="false" prefWidth="200" styleClass="button" text="Age">
+        <items>
+            <MenuItem mnemonicParsing="false" onAction="#young" text="&lt;25" />
+            <MenuItem mnemonicParsing="false" onAction="#between_25_34" text="25-34" />
+            <MenuItem mnemonicParsing="false" onAction="#between_35_44" text="35-44" />
+            <MenuItem mnemonicParsing="false" onAction="#between_45_54" text="45-54" />
+            <MenuItem mnemonicParsing="false" onAction="#old" text="&gt;54" />
+        </items>
+        <VBox.margin>
+            <Insets top="20.0" />
+        </VBox.margin>
+    </MenuButton>
+    <MenuButton fx:id="genderFilterButton" mnemonicParsing="false" prefWidth="200" styleClass="button" text="Gender">
+        <items>
+            <MenuItem mnemonicParsing="false" onAction="#genderFilter" text="Male" />
+            <MenuItem mnemonicParsing="false" onAction="#genderFilter" text="Female" />
+        </items>
+        <VBox.margin>
+            <Insets top="20.0" />
+        </VBox.margin>
+    </MenuButton>
+    <MenuButton fx:id="incomeFilterButton" mnemonicParsing="false" prefWidth="200" styleClass="button" text="Income">
+        <items>
+            <MenuItem mnemonicParsing="false" onAction="#incomeFilter" text="Low" />
+            <MenuItem mnemonicParsing="false" onAction="#incomeFilter" text="Medium" />
+            <MenuItem mnemonicParsing="false" onAction="#incomeFilter" text="High" />
+        </items>
+        <VBox.margin>
+            <Insets top="20.0" />
+        </VBox.margin>
+    </MenuButton>
+    <MenuButton fx:id="contextFilterButton" mnemonicParsing="false" prefWidth="200" styleClass="button" text="Context">
+        <items>
+            <MenuItem mnemonicParsing="false" onAction="#contextFilter" text="News" />
+            <MenuItem mnemonicParsing="false" onAction="#contextFilter" text="Shopping" />
+            <MenuItem mnemonicParsing="false" onAction="#contextFilter" text="Social Media" />
+            <MenuItem mnemonicParsing="false" onAction="#contextFilter" text="Blog" />
+            <MenuItem mnemonicParsing="false" onAction="#contextFilter" text="Hobbies" />
+        </items>
+        <VBox.margin>
+            <Insets top="20.0" />
+        </VBox.margin>
+    </MenuButton>
+   <Region prefHeight="100.0" />
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS"  prefWidth="50.0" />
+            <ColumnConstraints hgrow="ALWAYS"  prefWidth="50.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints/>
+        </rowConstraints>
+        <Button fx:id="addGraphButton" mnemonicParsing="false" onAction="#confirm"
+                maxWidth="Infinity"
+                styleClass="button"
+                text="Add another graph"
+                GridPane.columnIndex="0">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancel"
+                maxWidth="Infinity"
+                styleClass="button"
+                text="Cancel"
+                GridPane.columnIndex="1" />
+    </GridPane>
+    <stylesheets>
+        <URL value="@../../css/main.css" />
+    </stylesheets>
+</VBox>

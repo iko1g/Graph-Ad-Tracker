@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import java.lang.String?>
+
+<VBox xmlns="http://javafx.com/javafx/15.0.1"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="app.java.controllers.GraphController"
+      alignment="TOP_CENTER"
+      minWidth="200"
+      style="-fx-padding: 20"
+      HBox.hgrow="ALWAYS"
+>
+    <HBox minHeight="70" spacing="20" style="-fx-background-color: transparent">
+        <VBox>
+            <Label styleClass="h1" fx:id="metricLabel"/>
+            <Label styleClass="h2" fx:id="metricTotal"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS" />
+        <ChoiceBox fx:id="timeGranularity" maxWidth="Infinity" prefHeight="40" styleClass="button" onAction="#selectGranularity" value="Daily">
+            <String fx:value="Hourly"/>
+            <String fx:value="Daily"/>
+            <String fx:value="Weekly"/>
+        </ChoiceBox>
+        <Button fx:id="dataFilterButton" prefHeight="40" prefWidth="100" styleClass="button" text="Filter" onMouseClicked="#showFilterPopup" />
+        <Button fx:id="dateRangeButton" prefHeight="40" prefWidth="150" styleClass="button" text="Date Range" onMouseClicked="#showDateRangePopup"/>
+    </HBox>
+    <VBox VBox.vgrow="ALWAYS" spacing="10">
+        <BorderPane fx:id="lineChartPane"
+                    maxWidth="Infinity"
+                    minHeight="500"
+                    maxHeight="Infinity"
+                    VBox.vgrow="ALWAYS"
+                    style="-fx-border-width: 2; -fx-border-radius: 5; -fx-border-color: black"/>
+        <HBox prefHeight="100" spacing="20" style="-fx-background-color: transparent">
+            <Button fx:id="histogramButton"
+                    onAction="#createBarChart"
+                    maxWidth="Infinity"
+                    styleClass="button"
+                    text="Click Cost Histogram"
+            />
+            <Button fx:id="printerButton" onAction="#printerButtonClick" prefHeight="40" prefWidth="150" styleClass="button" text="Print Chart" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="addLineButton" prefHeight="40" prefWidth="100" styleClass="button" text="Add Line" onMouseClicked="#showFilterPopup"/>
+        </HBox>
+    </VBox>
+</VBox>

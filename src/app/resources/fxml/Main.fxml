@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<HBox styleClass="root" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml">
+    <fx:include source="MetricButtons.fxml" fx:id="metrics" />
+    <fx:include source="Graph.fxml" fx:id="graph" />
+    <stylesheets>
+        <URL value="@../css/main.css" />
+    </stylesheets>
+</HBox>
